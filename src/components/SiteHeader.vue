@@ -1,13 +1,13 @@
-<template lang="html">
+<template lang='html'>
   <header>
      <nav>
         <h1 class="logo">
-           <router-link :to="{ name: 'Home'}">18s1</router-link>
+           <router-link :to="{ name: 'Home'}">18s2</router-link>
         </h1>
         <ul class="nav">
-           <li v-for="course in courses" :key="course.title">
-             <router-link :to="{ name: 'Course', params: { course: course.link }}">
-                {{ course.title }}
+           <li v-for="link in links" :key="link.title">
+             <router-link :to="{ name: link.component }">
+                {{ link.title }}
              </router-link>
            </li>
         </ul>
@@ -19,14 +19,16 @@
 export default {
    data() {
       return {
-         courses: [
+         links: [
             {
                title: 'COMP1511',
-               link: 'comp1511'
+               link: 'comp1511',
+               component: 'Class'
             },
             {
-               title: 'COMP1521',
-               link: 'comp1521'
+               title: 'Notes',
+               link: 'notes',
+               component: 'Notes'
             }
          ]
       }

@@ -1,7 +1,7 @@
 {
   "name": "teaching",
   "version": "1.0.0",
-  "description": "Teaching base for semester 18s1",
+  "description": "Teaching base for semester 18s2",
   "author": "Alex Hinds <alex.hinds141@gmail.com>",
   "private": true,
   "scripts": {
@@ -50,7 +50,7 @@
     "karma-webpack": "^2.0.5",
     "less": "^3.8.0",
     "less-loader": "^4.0.5",
-    "marked": "^0.3.16",
+    "marked": "^0.3.19",
     "mocha": "^4.0.1",
     "normalize.css": "^8.0.0",
     "opn": "^5.1.0",

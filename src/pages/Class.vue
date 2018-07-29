@@ -1,6 +1,6 @@
 <template lang="html">
    <section class="labs">
-      <section-header name="labs"/>
+      <section-header name="Tutorials"/>
       <h3>{{ this.meta.description }}</h3>
       <section class="lab-cards">
          <card v-for="(lab, index) in labs"
@@ -19,16 +19,6 @@ import { getJSON } from '@/helpers'
 
 export default {
    components: { SectionHeader, Card },
-   props: {
-      cls: {
-         type: String,
-         required: true
-      },
-      course: {
-         type: String,
-         required: true
-      }
-   },
 
    data() {
       return {
@@ -38,14 +28,14 @@ export default {
    },
 
    beforeMount() {
-      getJSON(`${this.course}/${this.cls}/index.json`)
-         .then(json => {
-            json.weeks.forEach(week => this.labs.push({ path: week, meta: {} }))
-            this.meta = json.meta
+      getJSON(`comp1511/index.json`)
+         .then(({ weeks, meta }) => {
+            this.labs = weeks.map(week => ({ path: week, meta: {} }))
+            this.meta = meta
          })
          .then(() => {
             this.labs.forEach(lab => {
-               getJSON(`${this.course}/${this.cls}/${lab.path}/index.json`)
+               getJSON(`comp1511/${lab.path}/index.json`)
                   .then((labJSON) => {
                      lab.meta = labJSON.meta
                   })

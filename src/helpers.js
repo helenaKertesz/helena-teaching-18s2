@@ -1,4 +1,5 @@
-const API_BASE = 'https://teaching.alhinds.com/static/'
+//const API_BASE = 'https://teaching.alhinds.com/static/'
+const API_BASE = 'http://localhost:8080/static/'
 
 export function getJSON (path) {
     return fetch(API_BASE + path)

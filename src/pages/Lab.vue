@@ -15,14 +15,6 @@ import Prism from 'prismjs'
 
 export default {
    props: {
-      cls: {
-         type: String,
-         required: true
-      },
-      course: {
-         type: String,
-         required: true
-      },
       week: {
          type: String,
          required: true
@@ -38,19 +30,22 @@ export default {
       }
    },
 
-   beforeMount() {
-      getJSON(`${this.course}/${this.cls}/${this.week}/index.json`)
+   created() {
+      const baseURL = `comp1511/${this.week}`
+
+      getJSON(`${baseURL}/index.json`)
          .then((labJSON) => {
-            labJSON.files.forEach(file => this.files.push({ path: file, content: "" }))
+            this.files = labJSON.files.map(
+               file => ({ path: file, content: "" })
+            )
          })
-         .then(() => {
-            this.files.forEach(file => {
-               getFile(`${this.course}/${this.cls}/${this.week}/${file.path}`)
-                  .then((content) => {
-                     file.content = content
-                  })
-            })
-         })
+         .then(() => this.files.forEach(file =>
+               getFile(`${baseURL}/${file.path}`)
+               .then(content => {
+                  file.content = content
+               })
+            )
+         )
    },
 
    mounted() {

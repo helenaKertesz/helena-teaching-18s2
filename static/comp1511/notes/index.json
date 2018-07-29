@@ -1,3 +1,7 @@
 {
-   "files": "house-keeping.md"
+   "files": [
+      {
+         "name": "house-keeping.md"
+      }
+   ]
 }
