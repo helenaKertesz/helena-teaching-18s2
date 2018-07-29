@@ -1,14 +1,10 @@
-# Housekeeping
-
 ## Make sure you have a partner
 
 This is important.
 
 ## Make sure you know how to transfer files to your partner
 
-This is also important.
-
-### Simple way is:
+This is also important. The simplest way is:
 
 ```bash
 scp localfile z55555555@cse.unsw.edu.au:~/path/to/your/file

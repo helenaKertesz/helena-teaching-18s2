@@ -1,7 +1,8 @@
 <template lang="html">
-   <section class="labs">
+   <section class="labs blog">
       <section-header name='Notes'/>
-      <article v-html="marked(note)" v-if='notes.length' v-for="note in notes">
+      <article class="blog-content" v-html="marked(note)"
+         v-if='notes.length' v-for="note in notes">
       </article>
    </section>
 </template>
@@ -29,6 +30,7 @@ export default {
       .then(files => {
          this.notes = files
       })
+      .then(Prism.highlightAll)
    },
 
    methods: {
@@ -37,10 +39,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-
-article {
-   text-align: left;
-}
+<style lang="less" scoped>
+@import '../assets/blog.less';
 
 </style>
