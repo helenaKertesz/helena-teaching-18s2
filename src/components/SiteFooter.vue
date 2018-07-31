@@ -12,6 +12,7 @@
       <div class="copyright">
          <p>Made by Alexander Hinds</p>
          <p>&#xa9; 2018</p>
+         <p>Edited by Helena Kertesz</p>
       </div>
       <!--<h1>{{ longName }}</h1>-->
    </section>
@@ -23,7 +24,7 @@ export default {
       return {
          items: [
             {
-               link: 'https://github.com/DarkPurple141/teaching-18s1',
+               link: 'https://github.com/helenaKertesz/teaching-18s2',
                name: 'Source.',
                icon: 'github'
             },
